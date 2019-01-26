@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CBB8CD685B480A1C2B1AB34 /* Pods_oreads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD099B6D3C35F618453FED4B /* Pods_oreads.framework */; };
 		F07BF28921FC3D2E0009D791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07BF28821FC3D2E0009D791 /* AppDelegate.swift */; };
 		F07BF28B21FC3D2E0009D791 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07BF28A21FC3D2E0009D791 /* ViewController.swift */; };
 		F07BF28E21FC3D2E0009D791 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07BF28C21FC3D2E0009D791 /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		326F18D95B8C130209AB5AA6 /* Pods-oreads.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oreads.release.xcconfig"; path = "Pods/Target Support Files/Pods-oreads/Pods-oreads.release.xcconfig"; sourceTree = "<group>"; };
+		3D8F00607695C1142DDEC46D /* Pods-oreads.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oreads.debug.xcconfig"; path = "Pods/Target Support Files/Pods-oreads/Pods-oreads.debug.xcconfig"; sourceTree = "<group>"; };
 		F07BF28521FC3D2E0009D791 /* oreads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oreads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07BF28821FC3D2E0009D791 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07BF28A21FC3D2E0009D791 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		F07BF2A421FC3D300009D791 /* oreadsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oreadsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07BF2A821FC3D300009D791 /* oreadsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oreadsUITests.swift; sourceTree = "<group>"; };
 		F07BF2AA21FC3D300009D791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD099B6D3C35F618453FED4B /* Pods_oreads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oreads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBB8CD685B480A1C2B1AB34 /* Pods_oreads.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4366EFBABBB0CFA3ACF4BE44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD099B6D3C35F618453FED4B /* Pods_oreads.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF39AB56AF47A7C179351089 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D8F00607695C1142DDEC46D /* Pods-oreads.debug.xcconfig */,
+				326F18D95B8C130209AB5AA6 /* Pods-oreads.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F07BF27C21FC3D2E0009D791 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				F07BF29C21FC3D300009D791 /* oreadsTests */,
 				F07BF2A721FC3D300009D791 /* oreadsUITests */,
 				F07BF28621FC3D2E0009D791 /* Products */,
+				CF39AB56AF47A7C179351089 /* Pods */,
+				4366EFBABBB0CFA3ACF4BE44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F07BF2AD21FC3D300009D791 /* Build configuration list for PBXNativeTarget "oreads" */;
 			buildPhases = (
+				EC40DE4FEF66420264146545 /* [CP] Check Pods Manifest.lock */,
 				F07BF28121FC3D2E0009D791 /* Sources */,
 				F07BF28221FC3D2E0009D791 /* Frameworks */,
 				F07BF28321FC3D2E0009D791 /* Resources */,
+				8E3ABCDCC147A72F452D9494 /* [CP] Embed Pods Frameworks */,
+				6BAE0BEF49A15AE31312790A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6BAE0BEF49A15AE31312790A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-oreads/Pods-oreads-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E3ABCDCC147A72F452D9494 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-oreads/Pods-oreads-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-oreads/Pods-oreads-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC40DE4FEF66420264146545 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-oreads-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F07BF28121FC3D2E0009D791 /* Sources */ = {
@@ -430,14 +513,12 @@
 		};
 		F07BF2AE21FC3D300009D791 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D8F00607695C1142DDEC46D /* Pods-oreads.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = oreads/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfilatov.oreads;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -447,14 +528,12 @@
 		};
 		F07BF2AF21FC3D300009D791 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 326F18D95B8C130209AB5AA6 /* Pods-oreads.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = oreads/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfilatov.oreads;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -469,11 +548,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = oreadsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfilatov.oreadsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -489,11 +564,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = oreadsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfilatov.oreadsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -508,11 +579,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = oreadsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfilatov.oreadsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -527,11 +594,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = oreadsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfilatov.oreadsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

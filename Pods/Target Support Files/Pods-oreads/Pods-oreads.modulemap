@@ -1,0 +1,6 @@
+framework module Pods_oreads {
+  umbrella header "Pods-oreads-umbrella.h"
+
+  export *
+  module * { export * }
+}
