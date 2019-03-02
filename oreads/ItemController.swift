@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ItemController.swift
 //  oreads
 //
 //  Created by Sergey Filatov on 26/01/2019.
@@ -9,32 +9,27 @@
 import AVKit
 import UIKit
 
-class ViewController: UIViewController {
-
+class ItemController: UIViewController {
+    
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var playbackSlider: UISlider!
     
     var player: AVPlayer?
-    var audioUrl: String?
     var isAudioPlaying: Bool?
     var playerDuration: CMTime?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let audioUrl = URL(string: "https://hb.bizmrg.com/oreads/pupa.mp3")
+    func initStream(streamURL:String) {
+        let audioUrl = URL(string: streamURL)
         let playerItem:AVPlayerItem = AVPlayerItem(url: audioUrl!)
         player = AVPlayer(playerItem: playerItem)
-        
-        playBtn.setImage(UIImage(named:"play.png"),for:.normal)
-        playBtn.addTarget(self, action: #selector(ViewController.playButtonTapped(_:)), for: .touchUpInside)
+        isAudioPlaying = false
         
         playbackSlider.minimumValue = 0
         let duration : CMTime = playerItem.asset.duration
         let seconds : Float64 = CMTimeGetSeconds(duration)
         playbackSlider!.maximumValue = Float(seconds)
         playbackSlider!.isContinuous = false
-        playbackSlider?.addTarget(self, action: #selector(ViewController.playbackSliderValueChanged(_:)), for: .valueChanged)
+        playbackSlider?.addTarget(self, action: #selector(ItemController.playbackSliderValueChanged(_:)), for: .valueChanged)
         
         player!.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1), queue: DispatchQueue.main) { (CMTime) -> Void in
             if self.player!.currentItem?.status == .readyToPlay {
@@ -42,6 +37,9 @@ class ViewController: UIViewController {
                 self.playbackSlider!.value = Float ( time );
             }
         }
+        
+        playBtn.setImage(UIImage(named:"play.png"),for:.normal)
+        playBtn.addTarget(self, action: #selector(ItemController.playButtonTapped(_:)), for: .touchUpInside)
     }
     
     @objc func playbackSliderValueChanged(_ playbackSlider:UISlider)
@@ -69,6 +67,6 @@ class ViewController: UIViewController {
             playBtn.setImage(UIImage(named:"play.png"),for:.normal)
         }
     }
-
+    
 }
 
