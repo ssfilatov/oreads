@@ -13,6 +13,8 @@ class ItemController: UIViewController {
     
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var playbackSlider: UISlider!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var duration: UILabel!
     
     var player: AVPlayer?
     var isAudioPlaying: Bool?
@@ -35,6 +37,10 @@ class ItemController: UIViewController {
             if self.player!.currentItem?.status == .readyToPlay {
                 let time : Float64 = CMTimeGetSeconds(self.player!.currentTime());
                 self.playbackSlider!.value = Float ( time );
+                var secs = Int(time)
+                self.timeLabel.text = NSString(format: "%02d:%02d", secs/60, secs%60) as String//"\(secs/60):\(secs%60)"
+                secs = Int(CMTimeGetSeconds((self.player!.currentItem?.duration)!))
+                self.duration.text = NSString(format: "%02d:%02d", secs/60, secs%60) as String//"\(secs/60):\(secs%60)"
             }
         }
         

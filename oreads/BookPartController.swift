@@ -11,14 +11,13 @@ import UIKit
 
 
 
-class TableViewController: UITableViewController {
+class BookPartController: UITableViewController {
     
-    //created a string array to display on table view
-    var tableItems = [("Mythos by Stephen Fry", "https://hb.bizmrg.com/oreads/Mythos%20(Unabridged).m4b"),
-                      ("Sample music", "https://hb.bizmrg.com/oreads/pupa.mp3")]
+    var tableItems: [(String, String)]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableItems = []
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -30,10 +29,10 @@ class TableViewController: UITableViewController {
     
     //this method will populate the table view
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let TableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell")
+        let TableViewCell = tableView.dequeueReusableCell(withIdentifier: "BookPartCell")
         
         //adding the item to table row
-        TableViewCell!.textLabel?.text = tableItems[indexPath.row].0
+        TableViewCell!.textLabel?.text = tableItems![indexPath.row].0
         
         return TableViewCell!
     }
@@ -41,19 +40,23 @@ class TableViewController: UITableViewController {
     
     //this method will return the total rows count in the table view
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableItems.count
+        return tableItems!.count
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowItemControllerSegue" {
+        if segue.identifier == "ShowItemSegue" {
             let cell = sender as! UITableViewCell
             if let indexPath = tableView.indexPath(for: cell) {
                 let viewController = segue.destination as! ItemController
                 viewController.loadViewIfNeeded()
-                viewController.initStream(streamURL: tableItems[indexPath.row].1)
+                viewController.initStream(streamURL: tableItems![indexPath.row].1)
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         }
+    }
+    
+    func initParts(items: [(String, String)]) {
+        tableItems = items
     }
     
     
